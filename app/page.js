@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
 
 export default function Home() {
   return (
