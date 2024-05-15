@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const res = await fetch(
-    "http://worldtimeapi.org/api/timezone/America/New_York",
+    "http://worldtimeapi.org/api/timezone/America/Mexico_City",
     { cache: "no-store" }
   );
   const data = await res.json();
@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <h1>{data.datetime}</h1>
+        <p> Mexico City Time: {data.datetime}</p>
         {children}
       </body>
     </html>
