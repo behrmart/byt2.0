@@ -8,20 +8,10 @@ export const metadata = {
   description: "byt2.0",
 };
 
-export default async function RootLayout({ children }) {
-  const res = await fetch(
-    "http://worldtimeapi.org/api/timezone/America/Mexico_City",
-    { cache: "no-store" }
-  );
-  const data = await res.json();
-  console.log(data);
-
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <p> Mexico City Time: {data.datetime}</p>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
