@@ -1,16 +1,16 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import videojs from "video.js";
-import "video.js/dist/video-js.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          byt2.0&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
+        <Link href="/dashboard">
+          <p>
+            byt2.0&nbsp;
+            <code className={styles.code}>app/page.js</code>
+          </p>
+        </Link>
       </div>
     </main>
   );
