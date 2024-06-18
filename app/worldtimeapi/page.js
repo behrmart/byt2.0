@@ -1,4 +1,5 @@
 import styles from "../page.module.css";
+import Link from "next/link";
 
 const worldtimeurl = "http://worldtimeapi.org/api/timezone/America/Mexico_City";
 
@@ -15,6 +16,8 @@ export default async function Worldtimeapi() {
           Mexico City Time:&nbsp;
           <code className={styles.code}>{data.datetime}</code>
         </p>
+      </div>
+      <div className={styles.description}>
         <p>
           Day of the week:&nbsp;
           <code className={styles.code}>{data.day_of_week}</code>
@@ -41,6 +44,15 @@ export default async function Worldtimeapi() {
           Week Number:&nbsp;
           <code className={styles.code}> {data.week_number}</code>
         </p>
+      </div>
+
+      <div className={styles.description}>
+        <Link href="/">
+          <p>
+            byt2.0&nbsp;
+            <code className={styles.code}>app/home</code>
+          </p>
+        </Link>
       </div>
     </>
   );
