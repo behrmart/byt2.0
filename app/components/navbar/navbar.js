@@ -33,6 +33,13 @@ export default function Navbar() {
           </Link>
         </Button>
       </Center>
+      <Center fontSize="lg">
+        <Button ml={4} colorScheme="pink" variant="solid" size="sm">
+          <Link as={NextLink} href="/worldtimeapi">
+            Worldtime API
+          </Link>
+        </Button>
+      </Center>
       <Spacer />
 
       <Button
