@@ -1,4 +1,4 @@
-import styles from "../page.module.css";
+
 import Link from "next/link";
 
 const worldtimeurl = "http://worldtimeapi.org/api/timezone/America/Mexico_City";
@@ -11,46 +11,47 @@ export default async function Worldtimeapi() {
   return (
     <>
       <h3>WorldTimeAPI</h3>
-      <div className={styles.description}>
+      <div>
         <p>
           Mexico City Time:&nbsp;
-          <code className={styles.code}>{data.datetime}</code>
+          <code>{data.daytime}</code>
         </p>
       </div>
-      <div className={styles.description}>
+      <div >
         <p>
           Day of the week:&nbsp;
-          <code className={styles.code}>{data.day_of_week}</code>
+          <code >{data.day_of_week}</code>
         </p>
         <p>
           Day of the year:&nbsp;
-          <code className={styles.code}>{data.day_of_year}</code>
+          <code >{data.day_of_year}</code>
         </p>
 
         <p>
           Timezone:&nbsp;
-          <code className={styles.code}> {data.timezone}</code>
+          <code > {data.timezone}</code>
         </p>
 
         <p>
           UTC Offset:&nbsp;
-          <code className={styles.code}> {data.utc_offset}</code>
+          <code > {data.utc_offset}</code>
         </p>
         <p>
           Unix Time:&nbsp;
-          <code className={styles.code}> {data.unixtime}</code>
+          <code > {data.unixtime}</code>
         </p>
         <p>
           Week Number:&nbsp;
-          <code className={styles.code}> {data.week_number}</code>
+          <code > {data.week_number}</code>
         </p>
       </div>
 
-      <div className={styles.description}>
+      <div >
         <Link href="/">
           <p>
+            <code>
             byt2.0&nbsp;
-            <code className={styles.code}>app/home</code>
+            app/home</code>
           </p>
         </Link>
       </div>

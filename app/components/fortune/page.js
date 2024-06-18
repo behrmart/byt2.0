@@ -54,37 +54,22 @@ const Fortune = () => {
         bgGradient={["linear(to-t, red.400, purple.700)"]}
       >
         <CardHeader>
-          <Text size="md" color="pink">
+          <Code size="md" color="red">
             Fortune No.: {fortune && fortune.fortune_id}
-          </Text>
+          </Code>
         </CardHeader>
         <CardBody>
-          <Heading size="md" p="3">
+          <Code size="md" p="3" color="green">
             {fortune && fortune.fortune_message}
-          </Heading>
+          </Code>
         </CardBody>
         <CardFooter>
-          <Button colorScheme="purple" onClick={handleNewFortune}>
+          <Button colorScheme="whiteAlpha" variant='ghost' size='md' onClick={handleNewFortune}>
             New Fortune
           </Button>
         </CardFooter>
       </Card>
 
-      <Box borderWidth="1px" borderRadius="lg" p="10">
-        <Text p="3">
-          JSON response from Backend FortuneServer.js running on MongoDB Docker
-          Container:
-        </Text>
-        <Code p="6" colorScheme="green" borderWidth="1px" borderRadius="lg">
-          {JSON.stringify(fortune, null, 2)}
-        </Code>
-        <Text p="3">
-          HTTP response code:
-          <Code p="3" colorScheme="green" borderWidth="1px" borderRadius="lg">
-            {restat}
-          </Code>
-        </Text>
-      </Box>
     </Box>
   );
 };

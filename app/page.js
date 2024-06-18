@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+
 import Link from "next/link";
 import Fortune from "./components/fortune/page";
 // import { AuthProvider } from "./context/authcontext";
@@ -6,20 +6,20 @@ import Fortune from "./components/fortune/page";
 export default function Home() {
   return (
     //<AuthProvider>
-      <main className={styles.main}>
-        <div className={styles.description}>
+      <main >
+        <div>
           <Link href="/worldtimeapi">
             <p>
               byt2.0&nbsp;
-              <code className={styles.code}>worldtimeapi</code>
+              <code>worldtimeapi</code>
             </p>
           </Link>
         </div>
-        <div className={styles.description}>
+        <div >
           <Link href="/dashboard">
             <p>
               byt2.0&nbsp;
-              <code className={styles.code}>dashboard</code>
+              <code>dashboard</code>
             </p>
           </Link>
         </div>
