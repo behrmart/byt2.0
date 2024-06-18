@@ -1,12 +1,20 @@
 
 import Link from "next/link";
 import Fortune from "./components/fortune/page";
+import { Button } from "@chakra-ui/react";
+import Navbar from "./components/navbar/navbar";
+
+
 // import { AuthProvider } from "./context/authcontext";
 
+
+
 export default function Home() {
+
   return (
     //<AuthProvider>
-      <main >
+      <main>
+        <Navbar></Navbar>
         <div>
           <Link href="/worldtimeapi">
             <p>

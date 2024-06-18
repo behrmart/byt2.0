@@ -46,29 +46,20 @@ const Fortune = () => {
   };
 
   return (
-    <Box>
-      <Card
-        align="center"
-        p="6"
-        w="100%"
-        bgGradient={["linear(to-t, red.400, purple.700)"]}
-      >
-        <CardHeader>
-          <Code size="md" color="red">
+    <Box borderWidth='1px' borderRadius='lg'>
+     
+          <Code size="md" p="3" color="red">
             Fortune No.: {fortune && fortune.fortune_id}
           </Code>
-        </CardHeader>
-        <CardBody>
+        
           <Code size="md" p="3" color="green">
             {fortune && fortune.fortune_message}
           </Code>
-        </CardBody>
-        <CardFooter>
-          <Button colorScheme="whiteAlpha" variant='ghost' size='md' onClick={handleNewFortune}>
+        
+          <Button colorScheme="Yellow" variant='ghost' size='md' onClick={handleNewFortune}>
             New Fortune
           </Button>
-        </CardFooter>
-      </Card>
+        
 
     </Box>
   );
