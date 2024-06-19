@@ -40,6 +40,13 @@ export default function Navbar() {
           </Link>
         </Button>
       </Center>
+      <Center fontSize="lg">
+        <Button ml={4} colorScheme="pink" variant="solid" size="sm">
+          <Link as={NextLink} href="/videojs">
+            Video
+          </Link>
+        </Button>
+      </Center>
       <Spacer />
 
       <Button
