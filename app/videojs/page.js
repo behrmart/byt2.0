@@ -1,9 +1,10 @@
 "use client";
 import { useRef, useEffect } from "react";
-import Link from "next/link";
+import Navbar from "../components/navbar/navbar";
+import Fortune from "../components/fortune/page";
+
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
-
 
 export default function IndexPage() {
   const videoRef = useRef(null);
@@ -14,18 +15,20 @@ export default function IndexPage() {
         sources: [
           {
             src: "/videos/Jofel-20230302-1.mp4",
-            type: "video/mp4"
-          }
-        ]
+            type: "video/mp4",
+          },
+        ],
       });
     }
   });
 
   return (
-    <div>
-      Hello World.{" "}
-      
-      <video controls ref={videoRef} className="video-js" />
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <video controls muted loop ref={videoRef} className="video-js vjs-fluid" />
+      </div>
+      <Fortune />
+    </>
   );
 }
