@@ -3,9 +3,10 @@ import Link from "next/link";
 import Fortune from "./components/fortune/page";
 import { Button } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
+import Video from "./videojs/page";
 
 
-// import { AuthProvider } from "./context/authcontext";
+ //import { AuthProvider } from "./context/authcontext";
 
 
 
@@ -28,6 +29,14 @@ export default function Home() {
             <p>
               byt2.0&nbsp;
               <code>dashboard</code>
+            </p>
+          </Link>
+        </div>
+        <div >
+          <Link href="/videojs">
+            <p>
+              byt2.0&nbsp;
+              <code>Video</code>
             </p>
           </Link>
         </div>

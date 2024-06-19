@@ -2,17 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Code,
-  Button,
-  Text,
-  Heading,
-  Box,
-} from "@chakra-ui/react";
+import { Code, Button, Center, Box } from "@chakra-ui/react";
 
 const Fortune = () => {
   const [fortune, setFortune] = useState(null);
@@ -46,21 +36,25 @@ const Fortune = () => {
   };
 
   return (
-    <Box borderWidth='1px' borderRadius='lg'>
-     
-          <Code size="md" p="3" color="red">
-            Fortune No.: {fortune && fortune.fortune_id}
-          </Code>
-        
-          <Code size="md" p="3" color="green">
-            {fortune && fortune.fortune_message}
-          </Code>
-        
-          <Button colorScheme="Yellow" variant='ghost' size='md' onClick={handleNewFortune}>
-            New Fortune
-          </Button>
-        
+    <Box borderWidth="1px" borderRadius="lg">
+      <Center>
+        <Code size="md" p="3" color="red">
+          Fortune No.: {fortune && fortune.fortune_id}
+        </Code>
 
+        <Code size="md" p="3" color="green">
+          {fortune && fortune.fortune_message}
+        </Code>
+
+        <Button
+          colorScheme="Yellow"
+          variant="ghost"
+          size="md"
+          onClick={handleNewFortune}
+        >
+          New Fortune
+        </Button>
+      </Center>
     </Box>
   );
 };
