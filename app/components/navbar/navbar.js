@@ -36,7 +36,7 @@ export default function Navbar() {
       <Center fontSize="lg">
         <Button ml={4} colorScheme="pink" variant="solid" size="sm">
           <Link as={NextLink} href="/worldtimeapi">
-            Worldtime API
+            WT API
           </Link>
         </Button>
       </Center>
@@ -56,7 +56,7 @@ export default function Navbar() {
         size="sm"
         onClick={handleColorModeToggle}
       >
-        {colorMode === "dark" ? "Dark Mode" : "Light Mode"}
+        {colorMode === "dark" ? "Dark" : "Light"}
       </Button>
     </Flex>
   );
