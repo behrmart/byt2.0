@@ -36,20 +36,24 @@ const Fortune = () => {
   };
 
   return (
-    <Box borderWidth="1px" borderRadius="lg">
-      <Stack direction="row">
-        <Code size="md" p="3" colorScheme="red">
-          Fortune No.: {fortune && fortune.fortune_id}
-        </Code>
+    <Stack direction="column">
+      <Box borderWidth="1px" borderRadius="lg">
+        <Stack direction="row">
+          <Box>
+            <Code size="md" p="3" colorScheme="red">
+              Fortune No.: {fortune && fortune.fortune_id}
+            </Code>
 
-        <Code size="md" p="3" colorScheme="green">
-          {fortune && fortune.fortune_message}
-        </Code>
-        <Button colorScheme="yellow" variant="link" onClick={handleNewFortune}>
-          New Fortune
-        </Button>
-      </Stack>
-    </Box>
+            <Code size="md" p="3" colorScheme="green">
+              {fortune && fortune.fortune_message}
+            </Code>
+          </Box>
+        </Stack>
+      </Box>
+      <Button colorScheme="red" variant="outline" onClick={handleNewFortune}>
+        New Fortune
+      </Button>
+    </Stack>
   );
 };
 
