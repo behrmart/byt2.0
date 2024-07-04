@@ -35,7 +35,7 @@ export default function Navbar() {
       </Center>
       <Center fontSize="lg">
         <Button ml={4} colorScheme="pink" variant="solid" size="sm">
-          <Link as={NextLink} href="/worldtimeapi">
+          <Link as={NextLink} href="/worldtime">
             WT API
           </Link>
         </Button>

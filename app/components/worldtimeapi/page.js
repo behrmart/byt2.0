@@ -1,5 +1,3 @@
-import Navbar from "../components/navbar/navbar";
-import Fortune from "../components/fortune/page";
 import { Box, Heading, Code, Stack, Flex, Center } from "@chakra-ui/react";
 
 const worldtimeurl = "http://worldtimeapi.org/api/timezone/America/Mexico_City";
@@ -11,8 +9,6 @@ export default async function Worldtimeapi() {
 
   return (
     <>
-      <Navbar />
-
       <Box>
         <Box p="2">
           <Heading as="h3" size="md" color="deeppink" py="1">
@@ -53,8 +49,6 @@ export default async function Worldtimeapi() {
           </Flex>
         </Box>
       </Box>
-
-      <Fortune />
     </>
   );
 }

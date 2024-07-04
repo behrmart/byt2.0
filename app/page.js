@@ -1,4 +1,5 @@
 import Fortune from "./components/fortune/page";
+import Worldtimeapi from "./components/worldtimeapi/page";
 import {
   Button,
   Link,
@@ -8,7 +9,7 @@ import {
   Text,
   Box,
   Spacer,
-  VStack,
+  HStack,
 } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
 
@@ -18,14 +19,15 @@ export default function Home() {
   return (
     //<AuthProvider>
     <main>
-      <VStack align="stretch">
-        <Navbar />
+      <Navbar />
+      <HStack align="stretch">
         <Box>
-          <Link href="/worldtimeapi">
-            <Center bg="green.500">
-              <Box p="6">WT API</Box>
-            </Center>
-          </Link>
+          <Center bgGradient="linear(to-t, green.400, pink.700)">
+            <Box p="6">
+              <Worldtimeapi />
+            </Box>
+          </Center>
+
           <Link href="/videojs">
             <Center bg="blue.500">
               <Box p="6">Video</Box>
@@ -38,10 +40,10 @@ export default function Home() {
           </Link>
         </Box>
         <Spacer />
-        <Box>
-          <Fortune />
-        </Box>
-      </VStack>
+      </HStack>
+      <Box>
+        <Fortune />
+      </Box>
     </main>
     //</AuthProvider>
   );
