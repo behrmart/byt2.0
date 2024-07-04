@@ -21,25 +21,13 @@ export default function Home() {
     <main>
       <Navbar />
       <HStack align="stretch">
-        <Box>
+        <Flex>
           <Center bgGradient="linear(to-t, green.400, pink.700)">
             <Box p="6">
               <Worldtimeapi />
             </Box>
           </Center>
-
-          <Link href="/videojs">
-            <Center bg="blue.500">
-              <Box p="6">Video</Box>
-            </Center>
-          </Link>
-          <Link href="/worldtimeapi">
-            <Center bg="tomato">
-              <Box p="6">Home</Box>
-            </Center>
-          </Link>
-        </Box>
-        <Spacer />
+        </Flex>
       </HStack>
       <Box>
         <Fortune />
