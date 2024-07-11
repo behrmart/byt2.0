@@ -47,6 +47,9 @@ const Fortune = () => {
             <Code size="md" p="3" colorScheme="green">
               {fortune && fortune.fortune_message}
             </Code>
+            <Code size="md" p="3" colorScheme="yellow">
+              Response: {restat}
+            </Code>
           </Box>
         </Stack>
       </Box>
