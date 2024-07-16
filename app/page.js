@@ -1,4 +1,4 @@
-import Fortune from "./components/fortune/page";
+import Footer from "./components/footer/page";
 import Worldtimeapi from "./components/worldtimeapi/page";
 import {
   Button,
@@ -30,7 +30,7 @@ export default function Home() {
         </Flex>
       </HStack>
       <Box>
-        <Fortune />
+        <Footer />
       </Box>
     </main>
     //</AuthProvider>

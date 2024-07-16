@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Navbar from "../components/navbar/navbar";
-import Fortune from "../components/fortune/page";
+import Footer from "../components/footer/page";
 
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
@@ -26,9 +26,15 @@ export default function IndexPage() {
     <>
       <Navbar />
       <div>
-        <video controls muted loop ref={videoRef} className="video-js vjs-fluid" />
+        <video
+          controls
+          muted
+          loop
+          ref={videoRef}
+          className="video-js vjs-fluid"
+        />
       </div>
-      <Fortune />
+      <Footer />
     </>
   );
 }

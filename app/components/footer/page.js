@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import { Code, Button, Stack, Box, Center } from "@chakra-ui/react";
 
-const Fortune = () => {
+const Footer = () => {
   const [fortune, setFortune] = useState(null);
   const [restat, setStat] = useState(null);
 
@@ -60,4 +60,4 @@ const Fortune = () => {
   );
 };
 
-export default Fortune;
+export default Footer;

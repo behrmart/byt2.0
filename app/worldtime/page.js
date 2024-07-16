@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/navbar";
-import Fortune from "../components/fortune/page";
+import Footer from "../components/footer/page";
 import Worldtimeapi from "../components/worldtimeapi/page";
 
 export default function Worldtime() {
@@ -9,7 +9,7 @@ export default function Worldtime() {
 
       <Worldtimeapi />
 
-      <Fortune />
+      <Footer />
     </>
   );
 }
