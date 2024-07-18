@@ -1,54 +1,30 @@
-import { Box, Heading, Code, Stack, Flex, Center } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Code,
+  Stack,
+  Flex,
+  Center,
+  Text,
+} from "@chakra-ui/react";
 
+const getRandomPokemonId = () => Math.floor(Math.random() * 300) + 1;
 
-const PokebaseUrl = 'https://pokeapi.co/api/v2';
+const PokebaseUrl = `https://pokeapi.co/api/v2/pokemon/${getRandomPokemonId()}`;
 
 export default async function Pokeapi() {
   const res = await fetch(PokebaseUrl, { cache: "no-store" });
   const data = await res.json();
-  console.log(data);
+  console.log("PokeAPI data:", data.species.name);
 
   return (
     <>
+      <Heading>Pokemon API</Heading>
       <Box>
-        <Box p="2">
-          <Heading as="h3" size="md" color="deeppink" py="1">
-            WorldTimeAPI
-          </Heading>
-          <Code colorScheme="red">
-            <a
-              target="_blank"
-              href="http://worldtimeapi.org/api/timezone/America/Mexico_City"
-            >
-              API URL = http://worldtimeapi.org/api/timezone/America/Mexico_City
-            </a>
-          </Code>
-        </Box>
-        <Box p="2">
-          <Flex>
-            <Box>
-              <Stack direction="column">
-                <Code colorScheme="blue">Mexico City Time:</Code>
-                <Code colorScheme="blue">Day of the week:</Code>
-                <Code colorScheme="blue">Day of the year:</Code>
-                <Code colorScheme="blue">Timezone:</Code>
-                <Code colorScheme="blue">Unix Time:</Code>
-                <Code colorScheme="blue">Week Number:</Code>
-              </Stack>
-            </Box>
-
-            <Box>
-              <Stack direction="column">
-                <Code colorScheme="yellow">{data.datetime}</Code>
-                <Code colorScheme="yellow">{data.day_of_week}</Code>
-                <Code colorScheme="yellow">{data.day_of_year}</Code>
-                <Code colorScheme="yellow">{data.timezone}</Code>
-                <Code colorScheme="yellow">{data.unixtime}</Code>
-                <Code colorScheme="yellow">{data.week_number}</Code>
-              </Stack>
-            </Box>
-          </Flex>
-        </Box>
+        <Text>Species Name: {data.species.name}</Text>
+        <Text>Pokemon ID: {data.id}</Text>
+        <Text>Pokemon Height: {data.height}</Text>
+        <img src={data.sprites.front_default} alt="Pokemon image"></img>
       </Box>
     </>
   );

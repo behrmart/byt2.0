@@ -1,5 +1,6 @@
 import Footer from "./components/footer/page";
 import Worldtimeapi from "./components/worldtimeapi/page";
+import Pokeapi from "./components/pokemonapi/page";
 import {
   Button,
   Link,
@@ -25,6 +26,9 @@ export default function Home() {
           <Center bgGradient="linear(to-t, green.400, pink.700)">
             <Box p="6">
               <Worldtimeapi />
+            </Box>
+            <Box p="6">
+              <Pokeapi />
             </Box>
           </Center>
         </Flex>
