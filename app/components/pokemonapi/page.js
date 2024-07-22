@@ -42,15 +42,25 @@ const Pokeapi = () => {
 
   return (
     <>
-      <Heading>Pokemon API</Heading>
+      <Heading as="h3" size="md" color="deeppink" py="1">
+        Pokemon API
+      </Heading>
       <Box>
-        <Text>Species Name: {pokemon && pokemon.species.name}</Text>
-        <Text>Pokemon ID: {pokemon && pokemon.id}</Text>
-        <Text>Pokemon Height: {pokemon && pokemon.height}</Text>
-        <img
-          src={pokemon && pokemon.sprites.front_default}
-          alt="Pokemon image"
-        ></img>
+        <Stack direction="column">
+          <Code colorScheme="blue">
+            Species Name: {pokemon && pokemon.species.name}
+          </Code>
+          <Code colorScheme="green">Pokemon ID: {pokemon && pokemon.id}</Code>
+          <Code colorScheme="green">
+            Pokemon Height: {pokemon && pokemon.height}
+          </Code>
+        </Stack>
+        <Center>
+          <img
+            src={pokemon && pokemon.sprites.front_default}
+            alt="Pokemon image"
+          ></img>
+        </Center>
         <Code size="md" p="3" colorScheme="yellow">
           Response: {restat}
         </Code>
