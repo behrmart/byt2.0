@@ -54,7 +54,7 @@ const Pokeapi = () => {
         <Code size="md" p="3" colorScheme="yellow">
           Response: {restat}
         </Code>
-        <Button colorScheme="red" variant="outline" onClick={handleNewPokemon}>
+        <Button colorScheme="blue" variant="outline" onClick={handleNewPokemon}>
           New Pokemon
         </Button>
       </Box>

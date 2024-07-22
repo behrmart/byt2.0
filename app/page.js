@@ -27,7 +27,11 @@ export default function Home() {
             <Worldtimeapi />
           </Box>
 
-          <Box p={6} borderWidth="1px">
+          <Box
+            p={6}
+            borderWidth="1px"
+            bgGradient="linear(to-t, green.400, pink.700)"
+          >
             <Pokeapi />
           </Box>
         </Flex>
