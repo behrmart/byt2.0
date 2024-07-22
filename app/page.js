@@ -21,16 +21,15 @@ export default function Home() {
     //<AuthProvider>
     <main>
       <Navbar />
-      <HStack align="stretch">
+      <HStack spacing={8}>
         <Flex>
-          <Center bgGradient="linear(to-t, green.400, pink.700)">
-            <Box p="6">
-              <Worldtimeapi />
-            </Box>
-            <Box p="6">
-              <Pokeapi />
-            </Box>
-          </Center>
+          <Box p={6} borderWidth="1px">
+            <Worldtimeapi />
+          </Box>
+
+          <Box p={6} borderWidth="1px">
+            <Pokeapi />
+          </Box>
         </Flex>
       </HStack>
       <Box>
