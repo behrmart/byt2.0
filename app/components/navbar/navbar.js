@@ -29,14 +29,21 @@ export default function Navbar() {
       <Center fontSize="lg">
         <Button ml={4} colorScheme="pink" variant="solid" size="sm">
           <Link as={NextLink} href="/">
-            BYT2.0
+            Home
+          </Link>
+        </Button>
+      </Center>
+      <Center fontSize="lg">
+        <Button ml={4} colorScheme="pink" variant="solid" size="sm">
+          <Link as={NextLink} href="/pokemon">
+            Pokemon API
           </Link>
         </Button>
       </Center>
       <Center fontSize="lg">
         <Button ml={4} colorScheme="pink" variant="solid" size="sm">
           <Link as={NextLink} href="/worldtime">
-            WT API
+            WorldTime API
           </Link>
         </Button>
       </Center>
