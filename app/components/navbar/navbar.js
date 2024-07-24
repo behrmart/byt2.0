@@ -2,7 +2,14 @@
 import React, { useState } from "react";
 import NextLink from "next/link";
 import { Link } from "@chakra-ui/react";
-import { Flex, Spacer, Button, Center, useColorMode } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Button,
+  Center,
+  useColorMode,
+  Text,
+} from "@chakra-ui/react";
 
 export default function Navbar() {
   const [colorMode, setColorMode] = useState("light"); // Default color mode is light
@@ -55,7 +62,7 @@ export default function Navbar() {
         </Button>
       </Center>
       <Spacer />
-
+      <Text>Berns' RESTful App</Text>
       <Button
         ml={4}
         colorScheme="purple"

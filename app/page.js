@@ -11,6 +11,7 @@ import {
   Box,
   Spacer,
   HStack,
+  Heading,
 } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
 
@@ -21,22 +22,11 @@ export default function Home() {
     //<AuthProvider>
     <main>
       <Navbar />
-      <HStack spacing={8}>
+
+      <HStack>
         <Flex>
-          <Box
-            p={6}
-            borderWidth="1px"
-            bgGradient="linear(to-t, green.400, pink.700)"
-          >
-            <Pokeapi />
-          </Box>
-          <Box
-            p={6}
-            borderWidth="1px"
-            bgGradient="linear(to-t, blue.400, pink.700)"
-          >
-            <Worldtimeapi />
-          </Box>
+          <Pokeapi />
+          <Worldtimeapi />
         </Flex>
       </HStack>
       <Box>

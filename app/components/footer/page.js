@@ -19,7 +19,7 @@ const Footer = () => {
 
       const data = await response.json();
       const resStat = response.status;
-      console.log("JSON data: ", data, "Response code: ", resStat);
+      console.log("FORTUNE JSON data: ", data, "Response code: ", resStat);
       setFortune(data);
       setStat(resStat);
     } catch (error) {

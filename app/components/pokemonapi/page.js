@@ -42,31 +42,41 @@ const Pokeapi = () => {
 
   return (
     <>
-      <Heading as="h3" size="md" color="deeppink" py="1">
-        Pokemon API
-      </Heading>
-      <Box>
-        <Stack direction="column">
-          <Code colorScheme="blue">
-            Species Name: {pokemon && pokemon.species.name}
+      <Box
+        p={6}
+        borderWidth="1px"
+        bgGradient="linear(to-t, blue.400, pink.700)"
+      >
+        <Heading as="h3" size="md" color="deeppink" py="1">
+          Pokemon API
+        </Heading>
+        <Box>
+          <Stack direction="column">
+            <Code colorScheme="blue">
+              Species Name: {pokemon && pokemon.species.name}
+            </Code>
+            <Code colorScheme="green">Pokemon ID: {pokemon && pokemon.id}</Code>
+            <Code colorScheme="green">
+              Pokemon Height: {pokemon && pokemon.height}
+            </Code>
+          </Stack>
+          <Center>
+            <img
+              src={pokemon && pokemon.sprites.front_default}
+              alt="Pokemon image"
+            ></img>
+          </Center>
+          <Code size="md" p="3" colorScheme="yellow">
+            Response: {restat}
           </Code>
-          <Code colorScheme="green">Pokemon ID: {pokemon && pokemon.id}</Code>
-          <Code colorScheme="green">
-            Pokemon Height: {pokemon && pokemon.height}
-          </Code>
-        </Stack>
-        <Center>
-          <img
-            src={pokemon && pokemon.sprites.front_default}
-            alt="Pokemon image"
-          ></img>
-        </Center>
-        <Code size="md" p="3" colorScheme="yellow">
-          Response: {restat}
-        </Code>
-        <Button colorScheme="blue" variant="outline" onClick={handleNewPokemon}>
-          New Pokemon
-        </Button>
+          <Button
+            colorScheme="blue"
+            variant="outline"
+            onClick={handleNewPokemon}
+          >
+            New Pokemon
+          </Button>
+        </Box>
       </Box>
     </>
   );
