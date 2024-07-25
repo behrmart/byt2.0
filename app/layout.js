@@ -4,14 +4,16 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "byt2.0",
-  description: "byt2.0",
+  title: "Behr's API test App",
+  description: "Behr's API test App",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}><Providers>{children}</Providers></body>
+      <body suppressHydrationWarning={true}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

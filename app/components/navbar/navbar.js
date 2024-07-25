@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -15,6 +15,7 @@ import {
   MenuDivider,
   useDisclosure,
   useColorModeValue,
+  useColorMode,
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
@@ -41,6 +42,18 @@ const NavLink = ({ children }) => {
 
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [colorMode, setColorMode] = useState("light"); // Default color mode is light
+  const { toggleColorMode } = useColorMode();
+
+  const handleColorModeToggle = () => {
+    if (colorMode === "light") {
+      setColorMode("dark");
+      toggleColorMode();
+    } else {
+      setColorMode("light");
+      toggleColorMode();
+    }
+  };
 
   return (
     <>
@@ -54,7 +67,9 @@ export default function WithAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Berns' API Test</Box>
+            <Box fontWeight="bold" color="pink.600">
+              Berns' API Test
+            </Box>
             <HStack
               as={"nav"}
               spacing={4}
@@ -68,12 +83,13 @@ export default function WithAction() {
           <Flex alignItems={"center"}>
             <Button
               variant={"solid"}
-              colorScheme={"teal"}
+              colorScheme={"pink"}
               size={"sm"}
               mr={4}
+              onClick={handleColorModeToggle}
               leftIcon={<AddIcon />}
             >
-              Action
+              Dark-Light
             </Button>
             <Menu>
               <MenuButton
