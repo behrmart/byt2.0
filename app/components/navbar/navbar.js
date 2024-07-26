@@ -68,7 +68,7 @@ export default function WithAction() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box fontWeight="bold" color="pink.600">
-              Berns' RESTful APIs
+              Berns RESTful APIs
             </Box>
             <HStack
               as={"nav"}

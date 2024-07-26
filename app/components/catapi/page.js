@@ -24,8 +24,8 @@ const Catapi = () => {
       "live_02n5Dw3WncBR8G5IO8ornZkvWVlcMaMJ664uzVkvUxBwQ2sAkgVPUDboGRXFFnPL"; // replace with your actual API key
 
     const url = new URL(CatbaseURL);
-    url.searchParams.append("has_breeds", hasBreeds);
-    url.searchParams.append("api_key", apiKey);
+    url.searchParams.append("has_breeds", hasBreeds); //Get only Cats with breed info
+    url.searchParams.append("api_key", apiKey); // Cat API Key
 
     try {
       const response = await fetch(url.toString(), {
@@ -33,7 +33,12 @@ const Catapi = () => {
       });
       const data = await response.json();
       const resStat = response.status;
-      console.log("CAT API JSON DATA: ", data[0], "Response code: ", resStat);
+      console.log(
+        "CAT API JSON DATA: ",
+        data[0].breeds[0],
+        "Response code: ",
+        resStat
+      );
       setCat(data);
       setStat(resStat);
     } catch (error) {
@@ -60,8 +65,12 @@ const Catapi = () => {
         </Heading>
         <Box>
           <Stack direction="column">
-            <Code colorScheme="white">Cat ID: {catdata && catdata[0].id}</Code>
-            <Code colorScheme="green">Cat Name:</Code>
+            <Code colorScheme="white">
+              Cat Name: {catdata && catdata[0].breeds[0].name}
+            </Code>
+            <Code colorScheme="white">
+              Description: {catdata && catdata[0].breeds[0].description}
+            </Code>
           </Stack>
           <Center>
             <Image
