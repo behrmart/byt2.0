@@ -61,6 +61,7 @@ const Catapi = () => {
           <Center>
             <Image
               boxSize="230px"
+              borderRadius="5"
               objectFit="cover"
               src={catdata && catdata[0].url}
               alt="Cat image"

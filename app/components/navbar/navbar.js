@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 
-const Links = ["/#", "/pokemon", "/worldtime", "/videojs"];
+const Links = ["/#", "/pokemon", "/worldtime", "/videojs", "/catAPI"];
 
 const NavLink = ({ children }) => {
   return (
@@ -68,7 +68,7 @@ export default function WithAction() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box fontWeight="bold" color="pink.600">
-              Berns' API Test
+              Berns' RESTful APIs
             </Box>
             <HStack
               as={"nav"}
