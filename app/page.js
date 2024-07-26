@@ -1,6 +1,7 @@
 import Footer from "./components/footer/page";
 import Worldtimeapi from "./components/worldtimeapi/page";
 import Pokeapi from "./components/pokemonapi/page";
+import Catapi from "./components/catapi/page";
 import {
   Button,
   Link,
@@ -27,6 +28,7 @@ export default function Home() {
         <Flex>
           <Pokeapi />
           <Worldtimeapi />
+          <Catapi />
         </Flex>
       </HStack>
       <Box>
