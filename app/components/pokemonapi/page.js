@@ -45,14 +45,14 @@ const Pokeapi = () => {
       <Box
         p={6}
         borderWidth="1px"
-        bgGradient="linear(to-t, blue.400, pink.700)"
+        bgGradient="linear(to-t, pink.700, blue.400)"
       >
-        <Heading as="h3" size="md" color="deeppink" py="1">
+        <Heading as="h3" size="md" color="DarkMagenta" py="1">
           Pokemon API
         </Heading>
         <Box>
           <Stack direction="column">
-            <Code colorScheme="blue">
+            <Code colorScheme="white">
               Species Name: {pokemon && pokemon.species.name}
             </Code>
             <Code colorScheme="green">Pokemon ID: {pokemon && pokemon.id}</Code>

@@ -43,11 +43,11 @@ const Worldtimeapi = () => {
       <Box
         p={6}
         borderWidth="1px"
-        bgGradient="linear(to-t, green.400, pink.700)"
+        bgGradient="linear(to-t, pink.700, green.400)"
       >
         <Box>
           <Box p="2">
-            <Heading as="h3" size="md" color="deeppink" py="1">
+            <Heading as="h3" size="md" color="DarkMagenta" py="1">
               WorldTimeAPI
             </Heading>
             <Code colorScheme="red">

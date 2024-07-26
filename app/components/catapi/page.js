@@ -15,20 +15,25 @@ import {
 const Catapi = () => {
   const [catdata, setCat] = useState(null);
   const [restat, setStat] = useState(null);
-  /* 
-  const getRandomPokemonId = () => Math.floor(Math.random() * 300) + 1;
-  const PokebaseUrl = `https://pokeapi.co/api/v2/pokemon/${getRandomPokemonId()}`;
- */
+
   const CatbaseURL = "https://api.thecatapi.com/v1/images/search";
 
   const fetchData = async () => {
+    const hasBreeds = true;
+    const apiKey =
+      "live_02n5Dw3WncBR8G5IO8ornZkvWVlcMaMJ664uzVkvUxBwQ2sAkgVPUDboGRXFFnPL"; // replace with your actual API key
+
+    const url = new URL(CatbaseURL);
+    url.searchParams.append("has_breeds", hasBreeds);
+    url.searchParams.append("api_key", apiKey);
+
     try {
-      const response = await fetch(CatbaseURL, {
+      const response = await fetch(url.toString(), {
         method: "GET",
       });
       const data = await response.json();
       const resStat = response.status;
-      console.log("CAT API JSON DATA: ", data, "Response code: ", resStat);
+      console.log("CAT API JSON DATA: ", data[0], "Response code: ", resStat);
       setCat(data);
       setStat(resStat);
     } catch (error) {
@@ -48,14 +53,14 @@ const Catapi = () => {
       <Box
         p={6}
         borderWidth="1px"
-        bgGradient="linear(to-t, blue.400, pink.700)"
+        bgGradient="linear(to-t, pink.700, yellow.400)"
       >
-        <Heading as="h3" size="md" color="deeppink" py="1">
+        <Heading as="h3" size="md" color="DarkMagenta" py="1">
           Cat API
         </Heading>
         <Box>
           <Stack direction="column">
-            <Code colorScheme="blue">Cat ID: {catdata && catdata[0].id}</Code>
+            <Code colorScheme="white">Cat ID: {catdata && catdata[0].id}</Code>
             <Code colorScheme="green">Cat Name:</Code>
           </Stack>
           <Center>
