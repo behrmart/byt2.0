@@ -24,13 +24,12 @@ export default function Home() {
     <main>
       <Navbar />
 
-      <HStack>
-        <Flex>
-          <Pokeapi />
-          <Worldtimeapi />
-          <Catapi />
-        </Flex>
-      </HStack>
+      <Flex>
+        <Pokeapi />
+        <Worldtimeapi />
+        <Catapi />
+      </Flex>
+
       <Box>
         <Footer />
       </Box>

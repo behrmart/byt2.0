@@ -69,7 +69,7 @@ const Catapi = () => {
               Cat Name: {catdata && catdata[0].breeds[0].name}
             </Code>
             <Code colorScheme="white">
-              Description: {catdata && catdata[0].breeds[0].description}
+              Description: {catdata && catdata[0].breeds[0].temperament}
             </Code>
           </Stack>
           <Center>
