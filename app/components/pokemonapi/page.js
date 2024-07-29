@@ -19,13 +19,20 @@ const Pokeapi = () => {
   const PokebaseUrl = `https://pokeapi.co/api/v2/pokemon/${getRandomPokemonId()}`;
 
   const fetchData = async () => {
+    console.log("POKEMON API fetch URL: ", PokebaseUrl);
+
     try {
       const response = await fetch(PokebaseUrl, {
         method: "GET",
       });
       const data = await response.json();
       const resStat = response.status;
-      console.log("POKEMON JSON DATA: ", data, "Response code: ", resStat);
+      console.log(
+        "POKEMON API response JSON DATA: ",
+        data,
+        "Response code: ",
+        resStat
+      );
       setPokemon(data);
       setStat(resStat);
     } catch (error) {

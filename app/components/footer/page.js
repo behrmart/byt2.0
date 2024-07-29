@@ -8,18 +8,23 @@ const Footer = () => {
   const [fortune, setFortune] = useState(null);
   const [restat, setStat] = useState(null);
 
+  const fortuneURL = "http://192.168.100.23:3001/fortune/random";
+
   const fetchData = async () => {
+    console.log("FORTUNE API fetch URL:", fortuneURL);
     try {
-      const response = await fetch(
-        "http://192.168.100.23:3001/fortune/random",
-        {
-          method: "GET",
-        }
-      );
+      const response = await fetch(fortuneURL, {
+        method: "GET",
+      });
 
       const data = await response.json();
       const resStat = response.status;
-      console.log("FORTUNE JSON data: ", data, "Response code: ", resStat);
+      console.log(
+        "FORTUNE response JSON data: ",
+        data,
+        "Response code: ",
+        resStat
+      );
       setFortune(data);
       setStat(resStat);
     } catch (error) {

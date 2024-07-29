@@ -27,6 +27,8 @@ const Catapi = () => {
     url.searchParams.append("has_breeds", hasBreeds); //Get only Cats with breed info
     url.searchParams.append("api_key", apiKey); // Cat API Key
 
+    console.log("CAT API fetch URL: ", url);
+
     try {
       const response = await fetch(url.toString(), {
         method: "GET",
@@ -34,7 +36,7 @@ const Catapi = () => {
       const data = await response.json();
       const resStat = response.status;
       console.log(
-        "CAT API JSON DATA: ",
+        "CAT API response JSON DATA: ",
         data[0].breeds[0],
         "Response code: ",
         resStat

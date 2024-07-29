@@ -11,20 +11,26 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-const worldtimeurl = "http://worldtimeapi.org/api/timezone/America/Mexico_City";
+const worldtimeurl = "http://worldtimeapi.org/api/ip/8.8.8.8";
 
 const Worldtimeapi = () => {
   const [worldtime, setWorldtime] = useState(null);
   const [restat, setStat] = useState(null);
 
   const fetchData = async () => {
+    console.log("WORLDTIME API fetch URL: ", worldtimeurl);
     try {
       const response = await fetch(worldtimeurl, {
         method: "GET",
       });
       const data = await response.json();
       const resStat = response.status;
-      console.log("WORLDTIME JSON DATA: ", data, "Response code: ", resStat);
+      console.log(
+        "WORLDTIME response JSON DATA: ",
+        data,
+        "Response code: ",
+        resStat
+      );
       setWorldtime(data);
       setStat(resStat);
     } catch (error) {
