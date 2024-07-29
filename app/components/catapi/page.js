@@ -59,6 +59,7 @@ const Catapi = () => {
         p={6}
         borderWidth="1px"
         bgGradient="linear(to-t, pink.700, yellow.400)"
+        borderRadius="lg"
       >
         <Heading as="h3" size="md" color="DarkMagenta" py="1">
           Cat API
@@ -74,8 +75,9 @@ const Catapi = () => {
           </Stack>
           <Center>
             <Image
+              p="1"
               boxSize="230px"
-              borderRadius="5"
+              borderRadius="lg"
               objectFit="cover"
               src={catdata && catdata[0].url}
               alt="Cat image"

@@ -46,6 +46,7 @@ const Pokeapi = () => {
         p={6}
         borderWidth="1px"
         bgGradient="linear(to-t, pink.700, blue.400)"
+        borderRadius="lg"
       >
         <Heading as="h3" size="md" color="DarkMagenta" py="1">
           Pokemon API

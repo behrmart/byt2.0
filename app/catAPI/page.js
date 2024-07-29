@@ -2,13 +2,17 @@ import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/page";
 import Catapi from "../components/catapi/page";
 
-export default function Pokemonwidget() {
+import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
+
+export default function Catwidget() {
   return (
     <>
       <Navbar />
-
-      <Catapi />
-
+      <Card maxW="md">
+        <CardBody>
+          <Catapi />
+        </CardBody>
+      </Card>
       <Footer />
     </>
   );
