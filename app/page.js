@@ -15,6 +15,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
+import Openweatherapi from "./components/openweatherapi/page";
 
 //import { AuthProvider } from "./context/authcontext";
 
@@ -28,6 +29,7 @@ export default function Home() {
         <Pokeapi />
         <Worldtimeapi />
         <Catapi />
+        <Openweatherapi />
       </Flex>
 
       <Box>
