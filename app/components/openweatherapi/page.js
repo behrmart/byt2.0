@@ -7,107 +7,153 @@ import {
   Code,
   Stack,
   Flex,
-  Center,
   Button,
+  Center,
+  useToast,
+  Spinner,
 } from "@chakra-ui/react";
 
-const openweatherurl =
-  "https://api.openweathermap.org/data/2.5/weather?q=mexico city,mexico&units=metric&APPID=3f7179c552c03728fe2253a96fb6c079";
+const API_KEY = "3f7179c552c03728fe2253a96fb6c079";
 
 const Openweatherapi = () => {
-  const [openweather, setOpenweather] = useState(null);
-  const [restat, setStat] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+  const [status, setStatus] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [location, setLocation] = useState(null);
+  const toast = useToast();
 
-  const kelvinToCelsius = (kelvin) => {
-    return (kelvin - 273.15).toFixed(1);
-  };
+  const fetchWeatherData = async (lat, lon) => {
+    setIsLoading(true);
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
 
-  const fetchData = async () => {
-    console.log("OPEN WEATHER API fetch URL: ", openweatherurl);
     try {
-      const response = await fetch(openweatherurl, {
-        method: "GET",
-      });
+      const response = await fetch(url);
       const data = await response.json();
-      const resStat = response.status;
-      console.log(
-        "OPENWEATHER response JSON DATA: ",
-        data,
-        "Response code: ",
-        resStat
-      );
-      setOpenweather(data);
-      setStat(resStat);
+      setWeatherData(data);
+      setStatus(response.status);
+      setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching openweather data", error);
+      console.error("Error fetching weather data", error);
+      toast({
+        title: "Error",
+        description: "Failed to fetch weather data",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      setIsLoading(false);
     }
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const handleNewOpenweather = () => {
-    fetchData();
+
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setLocation({ lat: latitude, lon: longitude });
+          fetchWeatherData(latitude, longitude);
+        },
+        (error) => {
+          console.error("Error getting location", error);
+          toast({
+            title: "Error",
+            description: "Could not get your location. Using default location.",
+            status: "warning",
+            duration: 5000,
+            isClosable: true,
+          });
+          // Fallback to Mexico City if location access is denied
+          fetchWeatherData(19.4326, -99.1332);
+        }
+      );
+    } else {
+      toast({
+        title: "Error",
+        description:
+          "Geolocation is not supported by your browser. Using default location.",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+      });
+      // Fallback to Mexico City if geolocation is not supported
+      fetchWeatherData(19.4326, -99.1332);
+    }
   };
 
+  const handleRefresh = () => {
+    if (location) {
+      fetchWeatherData(location.lat, location.lon);
+    } else {
+      getLocation();
+    }
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
   return (
-    <>
-      <Box
-        p={6}
-        borderWidth="1px"
-        bgGradient="linear(to-t, pink.700, purple.400)"
-        borderRadius="lg"
-      >
-        <Box>
-          <Box p="2">
-            <Heading as="h3" size="md" color="DarkMagenta">
-              Open Weather API
-            </Heading>
-          </Box>
+    <Box
+      p={6}
+      borderWidth="1px"
+      bgGradient="linear(to-t, pink.700, green.400)"
+      borderRadius="lg"
+    >
+      <Box p="2">
+        <Heading as="h3" size="md" color="DarkMagenta">
+          Open Weather API
+        </Heading>
+      </Box>
+
+      {isLoading ? (
+        <Center p="10">
+          <Spinner size="xl" />
+        </Center>
+      ) : (
+        <>
           <Box p="2">
             <Flex>
               <Box>
                 <Stack direction="column">
-                  <Code colorScheme="blue">Temp:</Code>
+                  <Code colorScheme="blue">Location:</Code>
                   <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.temp} °C`}
+                    {weatherData?.name}, {weatherData?.sys?.country}
+                  </Code>
+                  <Code colorScheme="blue">Temperature:</Code>
+                  <Code colorScheme="yellow">{weatherData?.main?.temp} °C</Code>
+                  <Code colorScheme="blue">Feels Like:</Code>
+                  <Code colorScheme="yellow">
+                    {weatherData?.main?.feels_like} °C
                   </Code>
                   <Code colorScheme="blue">Humidity:</Code>
                   <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.humidity}%`}
+                    {weatherData?.main?.humidity}%
                   </Code>
-                  <Code colorScheme="blue">Feels Like:</Code>
+                  <Code colorScheme="blue">Conditions:</Code>
                   <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.feels_like} °C`}
-                  </Code>
-                  <Code colorScheme="blue">Max Temp:</Code>
-                  <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.temp_max} °C`}
-                  </Code>
-                  <Code colorScheme="blue">Min Temp:</Code>
-                  <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.temp_min} °C`}
-                  </Code>
-                  <Code colorScheme="blue">Pressure:</Code>
-                  <Code colorScheme="yellow">
-                    {openweather && `${openweather.main.pressure} hPa`}
+                    {weatherData?.weather?.[0]?.description}
                   </Code>
                 </Stack>
               </Box>
             </Flex>
           </Box>
+
           <Code size="md" p="3" colorScheme="yellow">
-            Response: {restat}
+            Response: {status}
           </Code>
+
           <Button
             colorScheme="blue"
             variant="outline"
-            onClick={handleNewOpenweather}
+            onClick={handleRefresh}
+            isLoading={isLoading}
+            loadingText="Refreshing..."
           >
-            New Weather Reading
+            Refresh Weather
           </Button>
-        </Box>
-      </Box>
-    </>
+        </>
+      )}
+    </Box>
   );
 };
 
