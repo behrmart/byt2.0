@@ -20,7 +20,14 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 
-const Links = ["/#", "/pokemon", "/worldtime", "/videojs", "/catAPI"];
+const Links = [
+  "/#",
+  "/pokemon",
+  "/worldtime",
+  "/videojs",
+  "/catAPI",
+  "/openweatherapi",
+];
 
 const NavLink = ({ children }) => {
   return (

@@ -54,7 +54,7 @@ const Openweatherapi = () => {
       <Box
         p={6}
         borderWidth="1px"
-        bgGradient="linear(to-t, pink.700, green.400)"
+        bgGradient="linear(to-t, pink.700, purple.400)"
         borderRadius="lg"
       >
         <Box>
