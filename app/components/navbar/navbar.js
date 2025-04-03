@@ -23,7 +23,7 @@ import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 const Links = [
   "/#",
   "/pokemon",
-  "/worldtime",
+  // "/worldtime",
   "/videojs",
   "/catAPI",
   "/openweatherapi",

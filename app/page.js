@@ -1,5 +1,5 @@
 import Footer from "./components/footer/page";
-import Worldtimeapi from "./components/worldtimeapi/page";
+// import Worldtimeapi from "./components/worldtimeapi/page";
 import Pokeapi from "./components/pokemonapi/page";
 import Catapi from "./components/catapi/page";
 import {
@@ -27,7 +27,7 @@ export default function Home() {
 
       <Flex>
         <Pokeapi />
-        <Worldtimeapi />
+        {/* <Worldtimeapi /> */}
         <Catapi />
         <Openweatherapi />
       </Flex>
