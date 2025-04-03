@@ -36,6 +36,7 @@ const Openweatherapi = () => {
       const data = await response.json();
       setWeatherData(data);
       setStatus(response.status);
+      console.log("OPENWEATHER response JSON data:", data);
     } catch (error) {
       console.error("Error fetching weather data:", error);
       toast({
