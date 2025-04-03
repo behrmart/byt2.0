@@ -1,3 +1,20 @@
+BEHRMART BYT2.0
+
+Just a simple exercise to test external public/private APIs.
+by Bernardo Felipe Martinez Meave
+
+Application is built on Next.js
+Uses one propietary API running on my own server to get the Linux Fortunes. This FortuneServer API is running using Docker and and Mongo DB (Cloud Mongo DB Atlas). The Docker container runs a Node.js Server to query a Mongo Atlas DB using Mongoose.
+
+sudo docker run -d --name mongolin -p27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo 
+sudo docker start mongolin
+
+Also uses public RESTful APIs:
+https://pokeapi.co
+https://api.thecatapi.com
+https://api.openweathermap.org
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
