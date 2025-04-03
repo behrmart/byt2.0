@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "dotenv/config";
+
 import {
   Box,
   Heading,
@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const API_KEY = process.env.OPENWEATHERKEY;
+const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHERKEY;
 
 const Openweatherapi = () => {
   const [weatherData, setWeatherData] = useState(null);
