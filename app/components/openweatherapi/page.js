@@ -157,6 +157,18 @@ const Openweatherapi = () => {
                       ? `${weatherData.main.temp} °C`
                       : "N/A"}
                   </Code>
+                  <Code colorScheme="blue">Feels Like:</Code>
+                  <Code colorScheme="yellow">
+                    {weatherData?.main?.feels_like
+                      ? `${weatherData.main.feels_like} °C`
+                      : "N/A"}
+                  </Code>
+                  <Code colorScheme="blue">Humidity:</Code>
+                  <Code colorScheme="yellow">
+                    {weatherData?.main?.humidity
+                      ? `${weatherData.main.humidity} %`
+                      : "N/A"}
+                  </Code>
                   <Code colorScheme="blue">Conditions:</Code>
                   <Code colorScheme="yellow">
                     {weatherData?.weather?.[0]?.description || "N/A"}
