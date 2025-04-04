@@ -165,7 +165,9 @@ const Openweatherapi = () => {
               </Box>
             </Flex>
           </Box>
-
+          <Code size="md" p="3" colorScheme="yellow">
+            Response: {status}
+          </Code>
           <Button
             colorScheme="blue"
             variant="outline"
