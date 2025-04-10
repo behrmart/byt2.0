@@ -42,7 +42,15 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <Box bg="tomato" w="100%" p="4" color="white" _hover={{ bg: "green" }}>
+      <Box
+        bg="pink.700"
+        w="100%"
+        p="4"
+        color="white"
+        _hover={{ bg: "pink.500" }}
+        borderWidth="1px"
+        borderRadius="lg"
+      >
         <Heading size={"md"} textAlign="center">
           Bernardo's Dashboard - {currentDate}
         </Heading>
