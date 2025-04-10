@@ -27,15 +27,26 @@ https://api.openweathermap.org */
 import Footer from "./components/footer/page";
 import Pokeapi from "./components/pokemonapi/page";
 import Catapi from "./components/catapi/page";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Heading } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
 import Openweatherapi from "./components/openweatherapi/page";
 
 export default function Home() {
+  // Get current date and format it (e.g., "April 11, 2025")
+  const currentDate = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
   return (
     <main>
       <Navbar />
-
+      <Box bg="tomato" w="100%" p="4" color="white" _hover={{ bg: "green" }}>
+        <Heading size={"md"} textAlign="center">
+          Bernardo's Dashboard - {currentDate}
+        </Heading>
+      </Box>
       <Flex
         direction={["column", "row", "row"]} // column on mobile, row otherwise
         wrap="wrap"
