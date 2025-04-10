@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/navbar";
-import Footer from "../components/footer/page";
+import Fortuneapi from "../components/fortuneapi/page";
 import Worldtimeapi from "../components/worldtimeapi/page";
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 
@@ -12,7 +12,7 @@ export default function Worldtime() {
           <Worldtimeapi />
         </CardBody>
       </Card>
-      <Footer />
+      <Fortuneapi />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/navbar";
-import Footer from "../components/footer/page";
+import Fortuneapi from "../components/fortuneapi/page";
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 import Openweatherapi from "../components/openweatherapi/page";
 
@@ -13,7 +13,7 @@ export default function Openweatherwidget() {
         </CardBody>
       </Card>
 
-      <Footer />
+      <Fortuneapi />
     </>
   );
 }

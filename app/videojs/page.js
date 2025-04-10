@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Navbar from "../components/navbar/navbar";
-import Footer from "../components/footer/page";
+import Fortuneapi from "../components/fortuneapi/page";
 
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
@@ -34,7 +34,7 @@ export default function IndexPage() {
           className="video-js vjs-fluid"
         />
       </div>
-      <Footer />
+      <Fortuneapi />
     </>
   );
 }

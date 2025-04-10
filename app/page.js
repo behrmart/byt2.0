@@ -24,7 +24,7 @@ https://pokeapi.co
 https://api.thecatapi.com 
 https://api.openweathermap.org */
 
-import Footer from "./components/footer/page";
+import Fortuneapi from "./components/fortuneapi/page";
 import Pokeapi from "./components/pokemonapi/page";
 import Catapi from "./components/catapi/page";
 import { Flex, Box, Heading, Center } from "@chakra-ui/react";
@@ -47,6 +47,9 @@ export default function Home() {
           Bernardo's Dashboard - {currentDate}
         </Heading>
       </Box>
+      <Center>
+        <Fortuneapi />
+      </Center>
       <Flex
         direction={["column", "row", "row"]} // column on mobile, row otherwise
         wrap="wrap"
@@ -70,7 +73,7 @@ export default function Home() {
 
       <Box mt={8}>
         <Center>
-          <Footer />
+          <Fortuneapi />
         </Center>
       </Box>
     </main>
