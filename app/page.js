@@ -27,7 +27,7 @@ https://api.openweathermap.org */
 import Footer from "./components/footer/page";
 import Pokeapi from "./components/pokemonapi/page";
 import Catapi from "./components/catapi/page";
-import { Flex, Box, Heading } from "@chakra-ui/react";
+import { Flex, Box, Heading, Center } from "@chakra-ui/react";
 import Navbar from "./components/navbar/navbar";
 import Openweatherapi from "./components/openweatherapi/page";
 
@@ -69,7 +69,9 @@ export default function Home() {
       </Flex>
 
       <Box mt={8}>
-        <Footer />
+        <Center>
+          <Footer />
+        </Center>
       </Box>
     </main>
   );
